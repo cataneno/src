@@ -597,10 +597,10 @@
       </and>
     </condition>
     <fail message="Can't find PCML runtime." unless="pcmlRuntimeExists"/>
-    <taskdef name="pcml" classname="PCMLTask" classpath="${output}:${include}:${source}"/>
+    <!-- <taskdef name="pcml" classname="PCMLTask" classpath="${output}:${include}:${source}"/>
     <pcml srcdir="${source}"
           destdir="${output}"
-          includes="**/*.pcml"/>
+          includes="**/*.pcml"/> -->
     <!-- Classpath:
            Need "output" to run the com.ibm.as400.data.ProgramCallDocument class.
            Need "include" for the ProgramCallDocument class to use the AS400 object.
@@ -614,7 +614,7 @@
     // Target: copyright
     ///////////////////////////////////////////////////////////////////////////-->
   <target name="copyright" depends="init">
-    <taskdef name="copyright" classname="CopyrightInsertionTask"/>
+    <taskdef name="copyright" classname="CopyrightInsertionTask" classpath="${output}:${include}:${source}"/>
     <copyright destdir="${output}"
                includes="**/*.class"
                verbose="${show-progress}"/>
