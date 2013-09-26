@@ -178,7 +178,7 @@ import java.util.Random;
  *        </li> 
  *   </ul>
  * </li>
- * </ul>
+ * </ul>      
  *  
  * @see AS400Credential
  *  
